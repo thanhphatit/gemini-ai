@@ -43,7 +43,8 @@ function main(){
     download_file
 
     if [[ -f ${TMP_INSTALL_FILE} ]];then
-        chmod 777 ${TMP_INSTALL_FILE}
+        chown -Rv _apt:root ${TMP_INSTALL_FILE}
+        chmod 755 ${TMP_INSTALL_FILE}
         apt install ${TMP_INSTALL_FILE}
     fi
 
