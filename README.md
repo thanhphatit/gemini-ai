@@ -14,3 +14,19 @@ Writed by bash shell 100%
 ### Terminal
 
 To install on terminal.
+
+###### CURL: 
+
+```
+sudo curl -o- https://raw.githubusercontent.com/thanhphatit/gemini-ai/main/install.sh | /bin/bash
+```
+
+###### WGET: 
+
+```
+sudo wget -q https://raw.githubusercontent.com/thanhphatit/gemini-ai/main/install.sh -O - | /bin/bash
+```
+
+### Help
+
+You can use `gemini-ai -h` to show help user
