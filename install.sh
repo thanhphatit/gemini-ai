@@ -38,18 +38,9 @@ function download_file(){
     fi    
 }
 
-function install_pack(){
-    apt update && apt upgrade
-
-    if [[ ! $(dpkg -l | grep glibc-2.33) ]];then
-        apt install glibc-source -y
-    fi
-}
-
 ###### MAIN
 function main(){
     download_file
-    install_pack
 
     if [[ -f ${TMP_INSTALL_FILE} ]];then
         chmod 755 ${TMP_INSTALL_FILE}
