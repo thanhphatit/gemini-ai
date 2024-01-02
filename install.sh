@@ -15,19 +15,6 @@ TMP_INSTALL_ROOT=$(mktemp -dt ${BIN_NAME}-install-XXXXXX)
 TMP_INSTALL_FILE="${TMP_INSTALL_ROOT}/${GIT_PATH_DOWN_FILE}"
 
 ###### FUNCTIONS
-function runAsRoot() {
-    local CMD="$*"
-
-    if [[ ${EUID} -ne 0 && ${USE_SUDO} = "true" ]]; then
-        CMD="sudo $CMD"
-    fi
-
-    $CMD || {
-        echo "Please visit https://www.itblognote.com for instructions on how to install without sudo."
-        exit 1
-    }
-}
-
 function download_file(){
     local _DOWNLOAD_URL="https://raw.githubusercontent.com/${REPO_OWNER}/${REPO_RELEASE_NAME}/${GIT_BRANCH}/${GIT_PATH_DOWN_FILE}"
 
@@ -48,7 +35,7 @@ function main(){
     fi
 
     if [[ -d ${TMP_INSTALL_ROOT} ]];then
-        runAsRoot rm -rf ${TMP_INSTALL_ROOT}
+        rm -rf ${TMP_INSTALL_ROOT}
     fi
 }
 
