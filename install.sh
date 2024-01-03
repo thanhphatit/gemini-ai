@@ -31,7 +31,7 @@ function main(){
 
     if [[ -f ${TMP_INSTALL_FILE} ]];then
         chmod 755 ${TMP_INSTALL_FILE}
-        apt install ${TMP_INSTALL_FILE}
+        dpkg -i ${TMP_INSTALL_FILE}
     fi
 
     if [[ -d ${TMP_INSTALL_ROOT} ]];then
