@@ -32,3 +32,12 @@ You can access to get API Key apply to app: https://makersuite.google.com/app/ap
 ### Help
 
 You can use `gemini-ai -h` to show help user
+
+Path file config `${HOME}/.gemini-ai/config` with content default
+
+```
+api_key: AIsasjashdkjsahdsaiuwyeiwuewyeiuwysajdhsajhd
+model: gemini-pro
+log_day: 7
+history_day: 1
+```
